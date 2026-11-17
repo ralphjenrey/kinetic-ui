@@ -1,0 +1,9 @@
+{
+  "name": "kinetic-ui",
+  "version": "0.1.1",
+  "description": "Editorial UI design skill with CSS tokens, component recipes, and browser interaction helpers.",
+  "author": { "name": "ralphjenrey" },
+  "repository": "https://github.com/ralphjenrey/kinetic-ui",
+  "license": "MIT",
+  "skills": ["./"]
+}

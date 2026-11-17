@@ -1,0 +1,12 @@
+{
+  "name": "kinetic-ui",
+  "interface": { "displayName": "Kinetic UI" },
+  "plugins": [
+    {
+      "name": "kinetic-ui",
+      "source": { "source": "local", "path": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

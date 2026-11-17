@@ -1,0 +1,11 @@
+{
+  "name": "kinetic-ui",
+  "owner": { "name": "ralphjenrey" },
+  "plugins": [
+    {
+      "name": "kinetic-ui",
+      "source": "./",
+      "description": "Editorial UI design skill with CSS tokens and interaction helpers."
+    }
+  ]
+}

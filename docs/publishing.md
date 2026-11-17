@@ -10,12 +10,14 @@ to `@ralphjenrey/kinetic-ui`.
 git status --short
 npm run check
 npm pack --dry-run
+bash -n install.sh
 ```
 
 Review the tarball file list. It should contain the skill, agent metadata, references,
 assets, documentation, package metadata, and license notices. Local caches, credentials,
 and `node_modules` must stay out of the release. The `files` allowlist in `package.json`
 controls package contents; npm also includes standard package files such as the README.
+The release also includes `install.sh` and both plugin manifests and marketplaces.
 
 Before changing prose, read the current document in full and check examples against
 the source. Keep documented behavior consistent with the shipped helpers.
@@ -26,8 +28,12 @@ For a subsequent release, update `CHANGELOG.md`, then choose the appropriate ver
 
 ```sh
 npm version patch
-git push origin main --follow-tags
 ```
+
+Keep the version in `.claude-plugin/plugin.json` and `.codex-plugin/plugin.json` in
+sync with `package.json`. Update those manifests before tagging the release; use
+`npm version patch --no-git-tag-version` when preparing all version changes in one commit.
+Commit the release files, create the matching version tag, and push the commit and tag.
 
 For the first release, commit the files and create the matching `v0.1.0` tag before pushing.
 Authenticate and publish:
@@ -47,6 +53,11 @@ An existing name and version cannot be published again; fixes require a new vers
 ```sh
 npm view @ralphjenrey/kinetic-ui version dist-tags repository.url
 ```
+
+If npm reports a staged release, a successful publish means the submission was accepted.
+It does not confirm that users can install that version yet. A `0.0.0-stage` holding
+version means the operational package is still awaiting release. Wait until the requested
+version appears in the registry before announcing availability.
 
 Install the published version in a temporary project and confirm these imports resolve:
 

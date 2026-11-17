@@ -8,31 +8,86 @@ The skill asks about the project's purpose, content, colors, and motion before b
 This package contains design instructions and reusable source files. It has no CLI,
 framework components, or runtime dependencies. The JavaScript helpers use browser APIs.
 
-## Install from npm
+## Install
+
+This repository holds one skill, `kinetic-ui`. Choose one installation method below.
+Each method loads the same skill and its references, fonts, and interaction helpers.
+
+### Skills CLI
+
+Use the [Skills CLI](https://github.com/vercel-labs/skills) to install for Codex,
+Claude Code, Cursor, OpenCode, Gemini CLI, or another supported agent:
+
+```sh
+npx skills add ralphjenrey/kinetic-ui
+```
+
+To select the skill explicitly:
+
+```sh
+npx skills add https://github.com/ralphjenrey/kinetic-ui --skill kinetic-ui
+```
+
+The CLI lets you choose agents and installs to the current project by default.
+Add `-g` for a global installation, or `-a codex` or `-a claude-code` to select an agent.
+
+### Claude Code plugin
+
+Run these as two separate commands inside Claude Code:
+
+```text
+/plugin marketplace add ralphjenrey/kinetic-ui
+/plugin install kinetic-ui@kinetic-ui
+```
+
+The plugin exposes the skill as `/kinetic-ui:kinetic-ui`.
+
+### Codex plugin
+
+Run these as two separate commands in your terminal:
+
+```sh
+codex plugin marketplace add ralphjenrey/kinetic-ui
+codex plugin add kinetic-ui@kinetic-ui
+```
+
+Start a new Codex session afterwards so the installed skill is loaded.
+
+### From a clone
+
+The installer links this clone into your user skill directory. Run `git pull` inside
+the clone to update the linked files. Keep the clone in place while using the skill.
+
+```sh
+git clone https://github.com/ralphjenrey/kinetic-ui.git
+cd kinetic-ui
+./install.sh                # Claude Code: ~/.claude/skills/kinetic-ui
+./install.sh --codex        # Codex: ~/.agents/skills/kinetic-ui
+./install.sh --all-agents   # Both
+```
+
+To remove the links created by this clone:
+
+```sh
+./install.sh --uninstall
+./install.sh --codex --uninstall
+./install.sh --all-agents --uninstall
+```
+
+The script supports macOS and Linux with Bash. It refuses to replace an existing
+directory or a link owned by another installation. Run `./install.sh --help` for
+custom directory options. Start a new agent session after installing or updating.
+
+### npm package
+
+To use the CSS and JavaScript helpers in an application:
 
 ```sh
 npm install @ralphjenrey/kinetic-ui
 ```
 
-For a project-local Codex skill, copy the installed package into the project's skill directory:
-
-```sh
-mkdir -p .agents/skills
-cp -R node_modules/@ralphjenrey/kinetic-ui .agents/skills/kinetic-ui
-```
-
-If that directory already exists, update the existing copy instead of nesting a second
-copy inside it. Start a new agent session after installation, then invoke `$kinetic-ui`.
-For other agents, place the folder in the location that agent uses for skills, preserving
-`SKILL.md`, `references/`, `assets/`, and `agents/` together.
-
-You can also install from the repository without npm:
-
-```sh
-git clone https://github.com/ralphjenrey/kinetic-ui.git
-mkdir -p /path/to/your-project/.agents/skills
-cp -R kinetic-ui /path/to/your-project/.agents/skills/kinetic-ui
-```
+This adds the package to `node_modules`. Use one of the methods above to make the skill
+available to an agent.
 
 ## Use the skill
 

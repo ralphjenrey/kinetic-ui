@@ -1,6 +1,6 @@
 {
   "name": "@ralphjenrey/kinetic-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An editorial UI design skill with CSS tokens, component recipes, and browser interaction helpers.",
   "type": "module",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "url": "https://github.com/ralphjenrey/kinetic-ui/issues"
   },
   "keywords": ["agent-skill", "codex", "design-system", "editorial", "ui", "css", "portfolio"],
-  "files": ["SKILL.md", "agents/", "assets/", "references/", "docs/", "CHANGELOG.md", "THIRD_PARTY_NOTICES.md"],
+  "files": ["SKILL.md", "agents/", "assets/", "references/", "docs/", ".claude-plugin/", ".codex-plugin/", ".agents/plugins/", "install.sh", "CHANGELOG.md", "THIRD_PARTY_NOTICES.md"],
   "exports": {
     "./skill": "./SKILL.md",
     "./tokens.css": "./references/tokens.css",
