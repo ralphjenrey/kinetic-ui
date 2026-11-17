@@ -8,6 +8,12 @@ The skill asks about the project's purpose, content, colors, and motion before b
 This package contains design instructions and reusable source files. It has no CLI,
 framework components, or runtime dependencies. The JavaScript helpers use browser APIs.
 
+## Demos
+
+- [Demo 1](https://ralphjenrey.github.io/kinetic-ui-sample1)
+- [Demo 2](https://ralphjenrey.github.io/kinetic-ui-sample2)
+- [Demo 3](https://ralphjenrey.github.io/kinetic-ui-sample3)
+
 ## Install
 
 This repository holds one skill, `kinetic-ui`. Choose one installation method below.
