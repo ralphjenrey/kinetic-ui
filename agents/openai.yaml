@@ -1,0 +1,14 @@
+interface:
+  display_name: kinetic ui
+  short_description: Ask preferences, then build editorial UI and UX
+  default_prompt: Use this skill to design my site. First ask for missing purpose,
+    audience, identity, theme colors, and motion preferences, then build to my answers.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
